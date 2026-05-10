@@ -24,8 +24,31 @@ export const NAV_ITEMS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-// Booking link — single constant, easy to swap when Hovik picks a scheduler.
-export const BOOKING_URL = "/contact#book";
+// Booking — Calendly-driven. The contact page renders a modal with the
+// react-calendly InlineWidget; nothing else needs to know the URL.
+// Tokens use brand-aligned values: ink text, gold primary, white surface.
+export const CALENDLY_CONFIG = {
+  url: "https://calendly.com/hovakimyan-serg/30min",
+  pageSettings: {
+    backgroundColor: "ffffff",
+    hideEventTypeDetails: false,
+    hideLandingPageDetails: false,
+    primaryColor: "DAAF37",
+    textColor: "111827",
+    hideGdprBanner: true,
+  },
+  styles: {
+    height: "100%",
+    width: "100%",
+  },
+  prefill: {},
+  utm: {
+    utmCampaign: "Portfolio Website",
+    utmSource: "tamazyanhovik.com",
+    utmMedium: "website",
+  },
+  iframeTitle: "Schedule a meeting with Hovik Tamazyan",
+} as const;
 
 // LinkedIn placeholder — swap when the real URL is available. Empty string
 // hides the link in the footer.

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Icon from "@/app/components/Icon";
-import { SITE, BOOKING_URL, CONTACT_TOPICS } from "@/lib/content";
+import BookCallButton from "@/app/components/BookCallButton";
+import { SITE, CONTACT_TOPICS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const isBookingExternal = BOOKING_URL.startsWith("http");
   return (
     <>
       <section className="ht-page-header">
@@ -35,15 +34,7 @@ export default function ContactPage() {
                 Thirty minutes, focused. Bring the question. We&rsquo;ll
                 figure out the shape of the engagement together.
               </p>
-              <a
-                href={BOOKING_URL}
-                className="ht-btn-primary"
-                {...(isBookingExternal
-                  ? { target: "_blank", rel: "noopener" }
-                  : {})}
-              >
-                Book the call <Icon name="arrow-right" size={14} />
-              </a>
+              <BookCallButton />
             </article>
 
             <article className="ht-contact-card">
