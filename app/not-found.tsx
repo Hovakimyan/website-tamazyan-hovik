@@ -13,18 +13,16 @@ export default function NotFound() {
         <p className="num">
           4<em>0</em>4
         </p>
-        <h1>
-          This page <em>wandered off</em>.
-        </h1>
+        <h1>This page is off the map.</h1>
         <p>
           The link you followed may be outdated or the page may have moved.
-          Let&rsquo;s get you back on track.
+          Let&rsquo;s get you back on a known route.
         </p>
         <div className="actions">
           <Link href="/" className="ht-btn-primary">
-            Go home <Icon name="arrow-right" size={16} />
+            Return home <Icon name="arrow-right" size={14} />
           </Link>
-          <Link href="/expertise" className="ht-btn-outline">
+          <Link href="/expertise" className="ht-btn-secondary">
             Browse expertise
           </Link>
         </div>

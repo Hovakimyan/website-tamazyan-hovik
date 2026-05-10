@@ -1,20 +1,20 @@
 import Hero from "@/app/sections/Hero";
-import Quote from "@/app/sections/Quote";
-import ExpertiseTiles from "@/app/sections/ExpertiseTiles";
-import Process from "@/app/sections/Process";
-import Values from "@/app/sections/Values";
-import Stats from "@/app/sections/Stats";
+import Thesis from "@/app/sections/Thesis";
+import Capabilities from "@/app/sections/Capabilities";
+import Roadmap from "@/app/sections/Roadmap";
+import Principles from "@/app/sections/Principles";
+import Outcomes from "@/app/sections/Outcomes";
 import CtaBanner from "@/app/sections/CtaBanner";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Quote />
-      <ExpertiseTiles />
-      <Process />
-      <Values />
-      <Stats />
+      <Thesis />
+      <Capabilities />
+      <Roadmap />
+      <Principles />
+      <Outcomes />
       <CtaBanner />
     </>
   );

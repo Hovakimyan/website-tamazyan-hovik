@@ -77,10 +77,11 @@ export default function MobileMenu({
         aria-hidden={!open}
       >
         <nav className="ht-mobile-nav" aria-label="Primary mobile">
-          {items.map((item) => (
+          {items.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
+              data-num={`0${i + 1}`}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={isActive(item.href) ? "is-active" : undefined}
               tabIndex={open ? 0 : -1}
@@ -94,9 +95,11 @@ export default function MobileMenu({
           className="ht-mobile-connect"
           tabIndex={open ? 0 : -1}
         >
-          Let&rsquo;s talk &rarr;
+          Schedule conversation &rarr;
         </Link>
-        <p className="ht-mobile-tagline">Empathy. Collaboration. Impact.</p>
+        <p className="ht-mobile-tagline">
+          Precision in strategy. <em>Excellence in execution.</em>
+        </p>
       </div>
     </>
   );

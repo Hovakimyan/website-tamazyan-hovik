@@ -5,7 +5,7 @@ import { SITE, BOOKING_URL, CONTACT_TOPICS } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Got a product vision? Facing a complex challenge? Book a 30-minute call or email Hovik Tamazyan directly.",
+    "Schedule a 30-minute strategic conversation or email Hovik Tamazyan directly. Engagement areas: strategy, GTM, leadership, architecture, research.",
 };
 
 export default function ContactPage() {
@@ -14,14 +14,14 @@ export default function ContactPage() {
     <>
       <section className="ht-page-header">
         <div className="ht-container">
-          <p className="ht-eyebrow" data-reveal>
-            Get in touch
-          </p>
-          <h1 data-reveal>Let&rsquo;s build something amazing</h1>
-          <p className="lead" data-reveal>
-            Got a product vision? Facing a complex challenge? Ready to turn
-            ideas into reality? Let&rsquo;s talk. I&rsquo;m here to help you
-            build products that matter.
+          <p className="ht-eyebrow">Get in touch</p>
+          <h1>
+            A short conversation <em>worth having.</em>
+          </h1>
+          <p className="lead">
+            Got a product vision, a thorny challenge, or a moment of
+            inflection? Bring a question worth answering. Thirty minutes is
+            usually enough to see whether we can help each other.
           </p>
         </div>
       </section>
@@ -29,14 +29,11 @@ export default function ContactPage() {
       <section className="ht-section ht-section--tight">
         <div className="ht-container">
           <div className="ht-contact-grid">
-            <article id="book" className="ht-contact-card" data-reveal>
-              <div className="ht-card-icon">
-                <Icon name="calendar" size={22} />
-              </div>
-              <h3>Schedule a meeting</h3>
-              <p>
-                Book a 30-minute call to discuss your project, challenges,
-                and how we can work together to build something exceptional.
+            <article id="book" className="ht-contact-card ht-contact-card--dark">
+              <h3>Schedule a conversation</h3>
+              <p className="description">
+                Thirty minutes, focused. Bring the question. We&rsquo;ll
+                figure out the shape of the engagement together.
               </p>
               <a
                 href={BOOKING_URL}
@@ -44,48 +41,41 @@ export default function ContactPage() {
                 {...(isBookingExternal
                   ? { target: "_blank", rel: "noopener" }
                   : {})}
-                style={{ alignSelf: "flex-start" }}
               >
-                Book a call <Icon name="arrow-right" size={16} />
+                Book the call <Icon name="arrow-right" size={14} />
               </a>
             </article>
 
-            <article className="ht-contact-card" data-reveal>
-              <div className="ht-card-icon ht-card-icon--green">
-                <Icon name="mail" size={22} />
-              </div>
-              <h3>Email me</h3>
-              <p>
-                Prefer email? Drop me a message and I&rsquo;ll get back to
-                you within 24 hours.
+            <article className="ht-contact-card">
+              <h3>Email directly</h3>
+              <p className="description">
+                Prefer writing first? Send a note. I reply within 24 hours
+                on weekdays.
               </p>
-              <a href={`mailto:${SITE.email}`} className="email">
+              <a href={`mailto:${SITE.email}`} className="email-link">
                 {SITE.email}
               </a>
             </article>
           </div>
 
-          <div className="ht-card" data-reveal style={{ marginTop: 28 }}>
-            <p className="ht-eyebrow">What we can discuss</p>
-            <ul className="ht-contact-list">
-              {CONTACT_TOPICS.map((t) => (
-                <li key={t}>
-                  <span className="check">
-                    <Icon name="check" size={14} />
-                  </span>
-                  {t}
+          <div className="ht-engagement">
+            <p className="ht-eyebrow">Engagement areas</p>
+            <h3 style={{ margin: "8px 0 0" }}>
+              Where this is <em>most useful</em>
+            </h3>
+            <ul className="ht-engagement-list">
+              {CONTACT_TOPICS.map((t, i) => (
+                <li key={t.title}>
+                  <span className="num">0{i + 1}</span>
+                  <div className="body">
+                    <h4>{t.title}</h4>
+                    <p>{t.body}</p>
+                  </div>
                 </li>
               ))}
             </ul>
             <span className="ht-contact-meta">
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: 4,
-                  background: "var(--color-success)",
-                }}
-              />
+              <span className="dot" />
               {SITE.location} · Open to remote
             </span>
           </div>

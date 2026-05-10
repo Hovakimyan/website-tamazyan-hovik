@@ -4,9 +4,9 @@ import Icon from "@/app/components/Icon";
 import { CERTIFICATIONS } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Certifications",
+  title: "Credentials",
   description:
-    "Professional Scrum Product Owner II & I, AI in Product Management, and other certifications that keep Hovik Tamazyan sharp and ahead of the curve.",
+    "Professional Scrum Product Owner II & I, AI in Product Management, and other credentials behind Hovik Tamazyan's product leadership practice.",
 };
 
 export default function CertificationsPage() {
@@ -14,31 +14,32 @@ export default function CertificationsPage() {
     <>
       <section className="ht-page-header">
         <div className="ht-container">
-          <p className="ht-eyebrow" data-reveal>
-            Certifications
-          </p>
-          <h1 data-reveal>Always learning, always growing</h1>
-          <p className="lead" data-reveal>
-            The best product leaders never stop learning. From advanced Scrum
-            mastery to AI integration, these certifications keep me sharp
-            and ahead of the curve.
+          <p className="ht-eyebrow">Credentials</p>
+          <h1>
+            Always learning. <em>Always sharpening.</em>
+          </h1>
+          <p className="lead">
+            The practice of product leadership compounds. From advanced
+            Scrum mastery to AI integration, these credentials mark the
+            ongoing investment in better decisions and faster execution.
           </p>
         </div>
       </section>
 
       <section className="ht-section ht-section--tight">
         <div className="ht-container">
-          <div className="ht-timeline">
+          <div className="ht-credentials">
             {CERTIFICATIONS.map((c) => (
               <article
                 key={`${c.year}-${c.title}`}
-                className="ht-cert"
-                data-reveal
+                className="ht-credential"
               >
-                <p className="ht-cert-year">{c.year}</p>
-                <h3>{c.title}</h3>
-                <p className="issuer">{c.issuer}</p>
-                <p>{c.body}</p>
+                <p className="ht-credential-year">{c.year}</p>
+                <div>
+                  <h3>{c.title}</h3>
+                  <p className="issuer">{c.issuer}</p>
+                </div>
+                <p className="body">{c.body}</p>
               </article>
             ))}
           </div>
@@ -47,19 +48,18 @@ export default function CertificationsPage() {
 
       <section className="ht-section ht-section--tight">
         <div className="ht-container">
-          <div className="ht-cta-banner" data-reveal>
+          <div className="ht-cta-banner">
             <div>
               <h2>
-                Want to discuss how my experience can help your{" "}
-                <em>product succeed?</em>
+                Curious how this <em>applies to your team?</em>
               </h2>
               <p>
-                Let&rsquo;s have a conversation about where you are, where
-                you want to go, and how I can help you get there.
+                Where you are, where you want to go, and how the right
+                practice can compound the difference.
               </p>
             </div>
             <Link href="/contact" className="ht-btn-primary">
-              Let&rsquo;s connect <Icon name="arrow-right" size={16} />
+              Schedule conversation <Icon name="arrow-right" size={14} />
             </Link>
           </div>
         </div>

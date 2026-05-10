@@ -5,18 +5,18 @@ export default function CtaBanner() {
   return (
     <section className="ht-section ht-section--tight">
       <div className="ht-container">
-        <div className="ht-cta-banner" data-reveal>
+        <div className="ht-cta-banner">
           <div>
             <h2>
-              Got a product vision? Let&rsquo;s <em>build</em> it.
+              Ready to align <em>strategy with execution?</em>
             </h2>
             <p>
-              Whether you&rsquo;re shaping a roadmap, planning a launch, or
-              rethinking how your team ships — I&rsquo;d love to talk.
+              A 30-minute conversation is enough to see whether we can help
+              each other. Bring a question worth answering.
             </p>
           </div>
           <Link href="/contact" className="ht-btn-primary">
-            Start a conversation <Icon name="arrow-right" size={16} />
+            Schedule conversation <Icon name="arrow-right" size={14} />
           </Link>
         </div>
       </div>

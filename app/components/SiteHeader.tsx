@@ -14,9 +14,8 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [trackedPath, setTrackedPath] = useState(pathname);
 
-  // Close the mobile menu on navigation. Derive-during-render pattern
-  // avoids react-hooks/set-state-in-effect by responding to the path
-  // change synchronously during the next render rather than via effect.
+  // Close the mobile menu on navigation (derive-during-render pattern,
+  // avoids react-hooks/set-state-in-effect).
   if (trackedPath !== pathname) {
     setTrackedPath(pathname);
     if (menuOpen) setMenuOpen(false);
@@ -48,7 +47,8 @@ export default function SiteHeader() {
     <>
       <header className={`ht-topbar${scrolled ? " scrolled" : ""}`}>
         <Link href="/" className="ht-mark" aria-label="Hovik Tamazyan home">
-          Hovik&nbsp;Tamazyan
+          <span>Hovik&nbsp;Tamazyan</span>
+          <span className="ht-mark-rule" aria-hidden="true" />
         </Link>
 
         <nav className="ht-nav" aria-label="Primary">
@@ -64,8 +64,10 @@ export default function SiteHeader() {
           ))}
         </nav>
 
+        <span className="ht-mark-meta">Yerevan · Open to engagements</span>
+
         <Link href={CTA_HREF} className="ht-cta-pill">
-          Let&rsquo;s talk
+          <span className="dot" aria-hidden="true" /> Schedule conversation
         </Link>
 
         <button
