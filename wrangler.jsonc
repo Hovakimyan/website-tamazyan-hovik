@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tamazyan-hovik",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+
+  // ── Environment variables ────────────────────────────────────────────────
+  // Site is fully static (no APIs, no forms with backends). The booking
+  // CTA links out to a third-party scheduler URL configured in
+  // lib/content.ts → BOOKING_URL — no env vars required.
+  //
+  // Final domains: tamazyanhovik.pm and tamazyanhovik.com (added via
+  // Cloudflare dashboard). The app is URL-agnostic so any host works.
+}
