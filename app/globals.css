@@ -494,7 +494,7 @@ h4 {
 }
 @media (max-width: 920px) {
   .ht-topbar {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
   }
   .ht-nav,
   .ht-topbar .ht-cta-pill {
@@ -502,6 +502,7 @@ h4 {
   }
   .ht-menu-toggle {
     display: inline-flex;
+    justify-self: end;
   }
 }
 
